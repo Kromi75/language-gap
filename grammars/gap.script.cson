@@ -1,0 +1,78 @@
+'scopeName': 'source.gap.script'
+'fileTypes': [
+  '00'
+]
+'name': 'GAP Script'
+'patterns': [
+  # single line comments
+  {
+    'match': '//.*$'
+    'name': 'comment.line.double-slash.gapscript'
+  }
+  # named section declaration
+  {
+    'captures':
+      '1':
+        'name': 'entity.name.function.module.gapscript'
+      '3':
+        'name': 'entity.name.function.module.gapscript'
+    'match': '(\\[(?i:MODUL|FORM|SUBFORM)\\s+)([A-Za-z0-9_]*)(\\])'
+  }
+  # standard section declaration
+  {
+    'name': 'entity.name.section.module.gapscript'
+    'match': '\\[(?i:PREINIT|INIT|POSTREAD|POSTSAVE|PRESAVE|POSTSHOW|SYSTIMER)\\]'
+  }
+  # single-quote strings
+  {
+    'match': '\'[^\']*\''
+    'name' : 'string.quoted.single.gapscript'
+  }
+  # double-quote strings
+  {
+    'match': '\"[^\"]*\"'
+    'name' : 'string.quoted.double.gapscript'
+  }
+  # control keywords
+  {
+    'match': '\\b(?i)(CATCH|DO WHILE|ENDIF|END IF|ENDDO|END DO|ELSE|ELSEIF|IF|FINALLY|RETURN|TRY)\\b'
+    'name': 'keyword.control.gapscript'
+  }
+  # type keywords
+  {
+    'match': '\\b(?i)(USUAL|DYN|STRING|INT|FLOAT|ARRAY|OBJECT)\\b'
+    'name': 'storage.type.gapscript'
+  }
+  # other keywords
+  {
+    'match': '\\b(?i)(DATA|LOCAL|AS|STATIC)\\b'
+    'name': 'keyword.other.gapscript'
+  }
+  # supporting variables
+  {
+    'match': '((?i)(Doku|Form))(:)'
+    'captures':
+      '1':
+        'name': 'support.variable.gapscript'
+      '2':
+        'name': 'keyword.operator.gapscript'
+  }
+  # operators (pipes, redirects, etc)
+  {
+    'match': '(?i)(\.and\.|\.not\.|\.or\.|[:.*+-/$!])'
+    'name': 'keyword.operator.gapscript'
+  }
+  # supporting constants
+  {
+    'match': '(?i)(NIL)'
+    'name': 'support.constant.gapscript'
+  }
+  # constant numbers
+  {
+    'captures':
+      '1':
+        'name': 'constant.numeric.gapscript'
+    'match': '\\b([0-9]+)\\b'
+    'name': 'meta.numberic.gapscript'
+  }
+]
