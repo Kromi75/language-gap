@@ -1,11 +1,11 @@
 {
-  "name": "language-gap",
+  "name": "language-gapscript",
   "main": "./lib/language-gap",
   "version": "0.1.0",
-  "description": "Syntax highlighting for GAP Script.",
+  "description": "Syntax highlighting for the proprietary GAP Script language.",
   "keywords": [
   ],
-  "repository": "https://github.com/atom/language-gap",
+  "repository": "https://github.com/Kromi75/language-gap",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
