@@ -35,44 +35,50 @@
   }
   # control keywords
   {
-    'match': '\\b(?i)(CATCH|DO WHILE|ENDIF|END IF|ENDDO|END DO|ELSE|ELSEIF|IF|FINALLY|RETURN|TRY)\\b'
+    'match': '\\b(?i:CATCH|DO WHILE|ENDIF|END IF|ENDDO|END DO|ELSE|ELSEIF|IF|INHERIT|FINALLY|RETURN|SUPER|TRY)\\b'
     'name': 'keyword.control.gapscript'
   }
   # type keywords
   {
-    'match': '\\b(?i)(USUAL|DYN|STRING|INT|FLOAT|ARRAY|OBJECT)\\b'
+    'match': '\\b(?i:USUAL|DYN|STRING|INT|FLOAT|ARRAY|OBJECT|LOGIC|DWORD)\\b'
     'name': 'storage.type.gapscript'
   }
   # other keywords
   {
-    'match': '\\b(?i)(DATA|LOCAL|AS|STATIC)\\b'
+    'match': '\\b(?i:DATA|LOCAL|AS|STATIC)\\b'
     'name': 'keyword.other.gapscript'
   }
   # supporting variables
   {
-    'match': '((?i)(Doku|Form))(:)'
-    'captures':
-      '1':
-        'name': 'support.variable.gapscript'
-      '2':
-        'name': 'keyword.operator.gapscript'
-  }
-  # operators (pipes, redirects, etc)
-  {
-    'match': '(?i)(\.and\.|\.not\.|\.or\.|[:.*+-/$!])'
-    'name': 'keyword.operator.gapscript'
+    'match': '\\b(?i:Doku|Form|_log)\\b'
+    'name': 'support.variable.gapscript'
   }
   # supporting constants
   {
-    'match': '(?i)(NIL)'
+    'match': '\\b(?i:NIL|TRUE|FALSE)\\b'
     'name': 'support.constant.gapscript'
+  }
+  # supporting constants
+  {
+    'match': '(?i:\\.T\\.|\\.F\\.)'
+    'name': 'support.constant.gapscript'
+  }
+  # operators (boolean)
+  {
+    'match': '(?i)(\\.and\\.|\\.not\\.|\\.or\\.)'
+    'name': 'keyword.operator.gapscript'
+  }
+  # operators (other)
+  {
+    'match': ':|\\.|\\*|\\+|-|/|\\$|!|='
+    'name': 'keyword.operator.gapscript'
   }
   # constant numbers
   {
     'captures':
       '1':
         'name': 'constant.numeric.gapscript'
-    'match': '\\b([0-9]+)\\b'
+    'match': '\\b([0-9.]+)\\b'
     'name': 'meta.numberic.gapscript'
   }
 ]
